@@ -1,0 +1,61 @@
+<!DOCTYPE html>
+<html lang="en">
+
+    <head>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <title>Projects - codewithashad</title>
+        <link href="https://cdn.jsdelivr.net/npm/tailwindcss@2.2.19/dist/tailwind.min.css" rel="stylesheet">
+    </head>
+
+    <body class="bg-gradient-to-br from-blue-100 to-purple-200 min-h-screen flex flex-col">
+        <header class="py-6 bg-white shadow-md">
+            <div class="container mx-auto flex justify-between items-center px-4">
+                <h1 class="text-3xl font-bold text-purple-700">codewithashad</h1>
+                <nav>
+                    <a href="about.html" class="text-gray-700 hover:text-purple-700 mx-2">About</a>
+                    <a href="projects.html" class="text-purple-700 font-bold mx-2">Projects</a>
+                    <a href="contact.html" class="text-gray-700 hover:text-purple-700 mx-2">Contact</a>
+                </nav>
+            </div>
+        </header>
+        <main class="flex-grow flex flex-col items-center justify-center text-center px-4">
+            <h2 class="text-4xl font-extrabold text-purple-800 mb-4">Featured Projects</h2>
+            <div id="projects-list" class="grid grid-cols-1 md:grid-cols-3 gap-8 w-full max-w-5xl mx-auto">
+                <!-- Projects will be rendered here by JavaScript -->
+            </div>
+        </main>
+        <footer class="py-6 bg-purple-700 text-white text-center">
+            &copy; 2025 codewithashad. All rights reserved.
+        </footer>
+        <script>
+            // Dynamic Featured Projects
+            const projects = [
+                {
+                    title: 'Project One',
+                    description: 'A cool web app built with JavaScript and TailwindCSS.',
+                    link: 'https://www.facebook.com',
+                },
+                {
+                    title: 'Project Two',
+                    description: 'An interactive tutorial series for beginners.',
+                    link: 'https://example.com',
+                },
+                {
+                    title: 'Project Three',
+                    description: 'A resource hub for learning modern web development.',
+                    link: 'https://example.com',
+                },
+            ];
+            const projectsList = document.getElementById('projects-list');
+            projectsList.innerHTML = projects.map(project => `
+                <div class="bg-white rounded-lg shadow-md p-6 transition-transform transform hover:scale-105">
+                    <h4 class="font-semibold text-lg mb-2">${project.title}</h4>
+                    <p class="text-gray-600 mb-2">${project.description}</p>
+                    <a href="${project.link}" class="text-purple-600 hover:underline">View Details</a>
+                </div>
+            `).join('');
+        </script>
+    </body>
+
+</html>
